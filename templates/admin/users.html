@@ -1,0 +1,20 @@
+{% extends "layouts/dashboard/default_dashboard.html" %}
+
+{% block title %} Users {% endblock %}
+
+{% block dash_title %} USERS {% endblock %}
+
+{% block dash_subtitle %} USERS {% endblock %}
+
+{% block head_dash %} 
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+{% block content %} 
+    <h1>Hello Users</h1>
+{% endblock %}
+
+{% block script_custom %} 
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+{% endblock %}

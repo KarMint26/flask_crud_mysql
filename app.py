@@ -1,6 +1,7 @@
 import os
 from flask import Flask
 from controllers import UserController
+from controllers import AdminController
 from models import db
 
 app = Flask(__name__)
@@ -46,6 +47,16 @@ def update_student(id):
 @app.route("/delete_student/<int:id>", methods=["POST"])
 def delete_student(id):
     return UserController.delete_student(id)
+
+# Dashboard
+@app.route("/admin/dash/dashboard", methods=["GET"])
+def dashboard():
+    return AdminController.index_dashboard()
+
+# Dashboard Users
+@app.route("/admin/dash/users", methods=["GET"])
+def users():
+    return AdminController.users_dashboard()
 
 if __name__ == '__main__':
     app.run(debug=True)
